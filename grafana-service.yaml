@@ -3,8 +3,6 @@ kind: Service
 metadata:
   name: grafana
   namespace: grafana
-  annotations:
-    metallb.universe.tf/address-pool: grafana-pool
 spec:
   ports:
     - port: 3000
@@ -13,4 +11,3 @@ spec:
   selector:
     app: grafana
   sessionAffinity: None
-  type: LoadBalancer
