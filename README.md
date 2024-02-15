@@ -7,15 +7,7 @@ This repository deploys an Grafana instance in a kubernetes cluster.
 kubectl apply -f grafana-namespace.yaml
 ```
 
-### 2. Create the Grafana Volume
-Create a volume for Grafana with:
-```
-kubectl apply -f grafana-volume.yaml
-```
-
-To make the pod able to write on this directory, we need to change permissions. NFS directory should be owner by grafana(472) user and root(0) group. I have had to configure 777 permissions in synology directory permissions (File Station > NFS > homelab > grafana-volume (properties) > Permission > Everyone, Allow, Full Control).
-
-### 3. Create the Grafana Artifacts
+### 2. Create the Grafana Artifacts
 Create the Grafana PVC, Deployment and service with:
 ```
 kubectl apply -f grafana-pvc.yaml
@@ -23,7 +15,7 @@ kubectl apply -f grafana-deployment.yaml
 kubectl apply -f grafana-service.yaml
 ```
 
-### 4. Access the UI
+### 3. Access the UI
 Once the deployment is ready, you can access to Grafana instance follwing your network configuration.
 
 http://grafana.calfolguera.com:3000
