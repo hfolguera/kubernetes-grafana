@@ -36,6 +36,14 @@ kubectl apply -f grafana-application.yaml
 ## References
 Get the official documentation at https://grafana.com/docs/grafana/latest/installation/kubernetes/
 
+## Tips
+
+### Reset admin password
+```
+kubectl exec -it pod/grafana-6d9b8d99fc-qshhl -n grafana -- /bin/bash
+grafana-cli admin reset-admin-password new_password
+```
+
 ## Next steps
 * Configuration as code
 
