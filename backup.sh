@@ -22,7 +22,7 @@ then
     RC=1
     exit $RC
 else
-    tar -czvf ${DEST_PATH}/grafana_backup_${DATE}.tar.gz ${TMP_PATH}/*
+    tar -czvf ${DEST_PATH}/grafana_backup_${DATE}.tar.gz -C ${TMP_PATH} .
     if [ $? -ne 0 ]
     then
         echo "[ERROR] Cannot compress backup ${TMP_PATH}"
