@@ -20,8 +20,8 @@ spec:
           - 0
       containers:
         - name: grafana
-          image: grafana/grafana:7.5.2
-          imagePullPolicy: IfNotPresent
+          image: grafana/grafana:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
               name: http-grafana
